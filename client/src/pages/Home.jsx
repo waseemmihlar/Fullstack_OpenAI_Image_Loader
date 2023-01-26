@@ -22,12 +22,15 @@ const Home = () => {
 
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/v1/post", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "https://ai-image-server.onrender.com/api/v1/post",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (response.ok) {
           const posts = await response.json();
